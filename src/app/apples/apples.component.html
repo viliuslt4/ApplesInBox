@@ -1,1 +1,8 @@
-<p>apples works!</p>
+<h1>Apples in box</h1>
+<div class="box">
+    <div class="apple-wrapper" *ngFor="let apple of apples" >
+        <img src='../../assets/images/apple.png'/>
+    </div>
+</div>
+<button [disabled]="results ? true : null" (click)="countApples()">Count</button>
+<app-results *ngIf="results"></app-results>
