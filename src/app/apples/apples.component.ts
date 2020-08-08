@@ -7,8 +7,10 @@ import { IBox } from '../models/box';
   styleUrls: ['./apples.component.scss']
 })
 export class ApplesComponent implements OnInit {
-  apples: IBox;
+  applesBox: IBox[];
   results: boolean = false;
+  timeCount;
+  apples: number = 0;
   constructor() { }
 
   ngOnInit(): void {
@@ -20,9 +22,21 @@ export class ApplesComponent implements OnInit {
     for(let i=0;i<items;i++){ 
       applesArray.push("apple");
     }
-    this.apples = applesArray;
+    this.applesBox = applesArray;
+  }
+  count(){
+    const timeStart = window.performance.now();
+    this.countApples();
+    const timeEnd = window.performance.now();
+    this.timeCount = (timeEnd - timeStart).toFixed(3);
+    console.log(this.timeCount);
+    this.results = true;
   }
   countApples(){
-
+    for(let j=0;j>this.applesBox.length;j++){
+      if(this.applesBox[j] === "apple"){
+        this.apples++;
+      }
+    }
   }
 }
