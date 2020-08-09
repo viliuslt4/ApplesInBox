@@ -8,15 +8,16 @@ import { IBox } from '../models/box';
 })
 export class ApplesComponent implements OnInit {
   applesBox: IBox[];
-  results: boolean = false;
+  results: boolean;
   timeCount;
-  apples: number = 0;
+  apples: number;
   constructor() { }
 
   ngOnInit(): void {
     this.generateRandomNumberApplesToBox();
   }
   generateRandomNumberApplesToBox(){
+    this.results = false;
     let items = Math.floor((Math.random() * 15) + 1);
     let applesArray = new Array();
     for(let i=0;i<items;i++){ 
@@ -32,6 +33,7 @@ export class ApplesComponent implements OnInit {
     this.results = true;
   }
   countApples(){
+    this.apples = 0;
     for(let j=0;j<this.applesBox.length;j++){
       if(this.applesBox[j] === "apple"){
         this.apples++;

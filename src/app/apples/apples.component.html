@@ -4,5 +4,8 @@
         <img src='../../assets/images/apple.png'/>
     </div>
 </div>
-<button class="btn btn-primary btn-lg" [disabled]="results ? true : null" (click)="count()">Count</button>
+<div class="btn-wrapper">
+    <button class="btn btn-secondary btn-lg" (click)="generateRandomNumberApplesToBox()">Generate new box</button>
+    <button class="btn btn-primary btn-lg" [disabled]="results ? true : null" (click)="count()">Count</button>
+</div>
 <app-results *ngIf="results" [time]="timeCount" [count]="apples"></app-results>
