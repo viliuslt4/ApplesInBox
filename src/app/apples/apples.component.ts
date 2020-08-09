@@ -28,12 +28,11 @@ export class ApplesComponent implements OnInit {
     const timeStart = window.performance.now();
     this.countApples();
     const timeEnd = window.performance.now();
-    this.timeCount = (timeEnd - timeStart).toFixed(3);
-    console.log(this.timeCount);
+    this.timeCount = (timeEnd - timeStart).toFixed(2);
     this.results = true;
   }
   countApples(){
-    for(let j=0;j>this.applesBox.length;j++){
+    for(let j=0;j<this.applesBox.length;j++){
       if(this.applesBox[j] === "apple"){
         this.apples++;
       }

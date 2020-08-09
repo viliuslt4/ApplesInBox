@@ -4,5 +4,5 @@
         <img src='../../assets/images/apple.png'/>
     </div>
 </div>
-<button [disabled]="results ? true : null" (click)="count()">Count</button>
-<app-results *ngIf="results"></app-results>
+<button class="btn btn-primary btn-lg" [disabled]="results ? true : null" (click)="count()">Count</button>
+<app-results *ngIf="results" [time]="timeCount" [count]="apples"></app-results>
